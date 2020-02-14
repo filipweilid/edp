@@ -1,0 +1,15 @@
+<mat-toolbar fxHide fxShow.gt-md="true" color="primary">
+    <div fxFlex fxLayout class="menu-items">
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+            <li *ngFor="let movie of movies" routerLinkActive="active">
+                <a [routerLink]="['/movie', movie.Id]" [state]="movie">{{ movie.Title }}</a>
+            </li>
+        </ul>
+    </div>
+</mat-toolbar>
+
+<mat-toolbar fxHide fxShow.lt-lg="true" color="primary">
+    <mat-toolbar-row *ngFor="let movie of movies" routerLinkActive="active">
+        <a [routerLink]="['/movie', movie.Id]" [state]="movie">{{ movie.Title }}</a>
+    </mat-toolbar-row>
+</mat-toolbar>

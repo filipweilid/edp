@@ -1,0 +1,52 @@
+<div *ngIf="!loading">
+    <img class="banner-img" src="data:image/png;base64,{{ movie.Image }}" />
+
+    <h1 class="title">{{ movie.Title }}</h1>
+
+    <div class="cards-container" gdColumns.gt-md="1fr 1fr" gdColumns.lt-lg="1fr">
+        <mat-card *ngFor="let character of characters; let i = index" class="card">
+            <mat-card-header>
+                <mat-card-title>{{ character.Name }}</mat-card-title>
+            </mat-card-header>
+            <mat-divider></mat-divider>
+            <mat-card-content>
+                <div gdColumns="40% 1fr">
+                    <div class="image">
+                        <img src="data:image/png;base64,{{ character.Image }}" />
+                    </div>
+                    <div>
+                        <p>
+                            <span class="label"> Name <br /> </span>
+                            <span> {{ character.Actor.Name }} </span>
+                        </p>
+
+                        <p>
+                            <span class="label"> Age <br /> </span>
+                            <span>
+                                {{ calculateAge(character.Actor.BornDate) }}
+                            </span>
+                        </p>
+                    </div>
+                </div>
+
+                <div *ngIf="showMore[i].showMore" gdColumns="1fr 40%">
+                    <div>
+                        <p>
+                            <span class="label"> Bio <br /> </span>
+                            <span> {{ character.Actor.Bio }} </span>
+                        </p>
+                    </div>
+                    <div class="image">
+                        <img src="data:image/png;base64,{{ character.Actor.Image }}" />
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-divider></mat-divider>
+            <mat-card-footer>
+                <button mat-button class="show-more-btn" (click)="toggleShowMore(character.Id)">
+                    {{ showMore[i].showMore ? 'Show less' : 'Show more' }}
+                </button>
+            </mat-card-footer>
+        </mat-card>
+    </div>
+</div>

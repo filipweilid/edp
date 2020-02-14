@@ -1,0 +1,38 @@
+.title {
+    text-align: center;
+}
+
+.banner-img {
+    width: 100%;
+}
+
+.card {
+    margin: 10px;
+    height: fit-content;
+}
+
+.image {
+    padding: 10px;
+}
+
+.image img {
+    width: 100%;
+}
+
+.cards-container {
+    margin: auto;
+    width: 60%;
+    justify-content: center;
+}
+
+.label {
+    opacity: 0.5;
+}
+
+.show-more-btn {
+    width: 100%;
+}
+
+mat-card-footer {
+    text-align: center;
+}

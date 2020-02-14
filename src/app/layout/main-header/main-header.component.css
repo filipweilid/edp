@@ -1,0 +1,30 @@
+.navigation-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-items {
+    height: 100%;
+}
+
+li {
+    display: table;
+    height: 100%;
+}
+
+a {
+    vertical-align: middle;
+    display: table-cell;
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+a:hover {
+    color: lightgray;
+}
+
+.active {
+    background-color: #002984;
+}
